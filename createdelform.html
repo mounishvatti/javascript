@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <button onclick="createForm()">Create</button><br />
+    <button onclick="deleteForm()">Delete</button><br />
+
+    <script>
+      function createForm() {
+        var form = document.createElement("form");
+        form.id = "myForm";
+        var input1 = document.createElement("input");
+        input1.type = "text";
+        input1.name = "username";
+        input1.placeholder = "Username";
+        var input2 = document.createElement("input");
+        input2.type = "text";
+        input2.name = "password";
+        input2.placeholder = "Password";
+        var submitButton = document.createElement("input");
+        submitButton.type = "submit";
+        submitButton.value = "Submit";
+        form.appendChild(input1);
+        form.appendChild(input2);
+        form.appendChild(submitButton);
+        document.body.appendChild(form);
+      }
+      function deleteForm() {
+        var form = document.getElementById("myForm");
+        if (form) {
+          form.parentNode.removeChild(form);
+        }
+      }
+    </script>
+  </body>
+</html>
